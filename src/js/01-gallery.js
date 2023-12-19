@@ -69,7 +69,7 @@ const images = [
   },
 ];
 
-// Function to create gallery items
+
 function createGalleryItem({ preview, original, description }) {
   const galleryItem = document.createElement('li');
   galleryItem.classList.add('gallery-item');
@@ -89,14 +89,14 @@ function createGalleryItem({ preview, original, description }) {
   return galleryItem;
 }
 
-// Populate the gallery with items
+
 images.forEach(image => {
   const galleryItem = createGalleryItem(image);
   gallery.appendChild(galleryItem);
 });
 
-// Initialize SimpleLightbox
+
 const lightbox = new SimpleLightbox('.gallery a', {
-  captions: true,
+  captionsData: 'alt', 
   captionDelay: 250,
 });
